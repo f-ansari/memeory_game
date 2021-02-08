@@ -4,3 +4,33 @@ body {
   height: 100%;
   width: 100%;
 }
+
+
+/*
+GAMEBORD
+*/
+.container {
+  background-color: black;
+  color: white;
+  padding: 10vh 10vw 10vh 10vw;
+  margin: 5%;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr; 
+  margin: 1% 0 1% 35%;
+  height: 40vh;
+  width: 40vh;
+  align-content: center;
+}
+
+.cell {
+  height: 50%;
+  width: 50%; 
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 3px;
+}
+
