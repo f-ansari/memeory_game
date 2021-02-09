@@ -12,15 +12,21 @@ let gameCard = [
 ]
 const cell = document.querySelector('.cell')
 let card = document.createElement('img')
-// card.src = '/game_images/card_back.JPEG'
-//  console.log(gameCard[0].flipped)
+
+
+
+/*********/
+/*Styling via jS*/
+card.src = '/game_images/card_back.JPEG'
+card.style.width = '100%'
+cell.appendChild(card)
+
 
 /*********/
 /*Functions*/
 const handleClick = (event) => {
   const cardIndex = event.target.id
-  // const cardIndex = 0
-
+  
   if (gameCard[cardIndex].flipped === false) {
     console.log('true')
     flipFront(cardIndex)
@@ -38,17 +44,14 @@ const flipFront = (cardIndex) => {
   card.src = gameCard[cardIndex].img
   card.id = cardIndex
   cell.appendChild(card)
-  // gameCard[cardIndex].flipped = true
 }
 
 const flipBack = (cardIndex) => {
   console.log(cardIndex)
-  // let card = document.createElement('img')
   card.style.width = '100%'
   card.src = '/game_images/card_back.JPEG'
   card.id = cardIndex
   cell.appendChild(card)
-  // gameCard[cardIndex].flipped = false
 }
 
 // const flipCard = (cardIndex) => {
