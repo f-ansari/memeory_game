@@ -19,15 +19,6 @@ let card = document.createElement('img')
 const handleClick = (event) => {
   const cardIndex = event.target.id
   
-  // if (gameCard[cardIndex].flipped === false) {
-  //   console.log('true')
-  //   flipFront(cardIndex)
-  //   gameCard[cardIndex].flipped = true
-  // } else {
-  //   console.log('false')
-  //   flipBack(cardIndex)
-  //   gameCard[cardIndex].flipped = false
-  // }
   flipCard(cardIndex)
 }
 
@@ -48,13 +39,6 @@ const flipCard = (cardIndex) => {
   }
 }
 
-// console.log(gameCard[0].img)
-// flipCard(0)
-// console.log(gameCard[0].img)
-// flipCard(0)
-// console.log(gameCard[0].img)
-// flipCard(0)
-// console.log(gameCard[0].img)
 /*********/
 /*Event Listeners*/
 document.querySelectorAll('.cell').forEach(function (cell) {
