@@ -1,5 +1,5 @@
 body {
-  margin: 0 auto;
+  margin: auto 0;
   text-align: center;
   height: 100%;
   width: 100%;
@@ -12,24 +12,25 @@ GAMEBORD
 .container {
   background-color: black;
   color: white;
-  padding: 10vh 10vw 10vh 10vw;
-  margin: 5%;
+  padding: 10% 10% 10% 10%;
+  margin: 5% 5% 10% 5%;
 }
 
 .game-board {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr; 
-  margin: 1% 0 1% 35%;
-  height: 40vh;
-  width: 40vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr); 
+  /* margin: 1% 0 1% 35%; */
+  margin: 0 auto;
+  height: 60vh;
+  width: 60vh;
   align-content: center;
 }
 
 .cell {
-  height: 50%;
-  width: 50%; 
-  background-color: black;
+  height: 100%;
+  width: 100%; 
+  background-color: #e03e3e;
   border: 2px solid white;
   border-radius: 3px;
 }
