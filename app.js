@@ -14,62 +14,39 @@ const cell = document.querySelector('.cell')
 let card = document.createElement('img')
 
 
-
-/*********/
-/*Styling via jS*/
-card.src = '/game_images/card_back.JPEG'
-card.style.width = '100%'
-cell.appendChild(card)
-
-
 /*********/
 /*Functions*/
 const handleClick = (event) => {
   const cardIndex = event.target.id
   
-  if (gameCard[cardIndex].flipped === false) {
-    console.log('true')
-    flipFront(cardIndex)
+  // if (gameCard[cardIndex].flipped === false) {
+  //   console.log('true')
+  //   flipFront(cardIndex)
+  //   gameCard[cardIndex].flipped = true
+  // } else {
+  //   console.log('false')
+  //   flipBack(cardIndex)
+  //   gameCard[cardIndex].flipped = false
+  // }
+  flipCard(cardIndex)
+}
+
+const flipCard = (cardIndex) => {
+  card.style.width = '100%'
+  card.style.height = '100%'
+  if (gameCard[cardIndex].flipped == false) {
     gameCard[cardIndex].flipped = true
+    card.src = gameCard[cardIndex].img
+    card.id = cardIndex
+    cell.appendChild(card)
   } else {
-    console.log('false')
-    flipBack(cardIndex)
     gameCard[cardIndex].flipped = false
+    card.src = '/game_images/card_back.JPEG'
+    card.id = cardIndex
+    cell.appendChild(card)
+    console.log('else')
   }
 }
-
-const flipFront = (cardIndex) => {
-  console.log(cardIndex)
-  card.style.width = '100%'
-  card.src = gameCard[cardIndex].img
-  card.id = cardIndex
-  cell.appendChild(card)
-}
-
-const flipBack = (cardIndex) => {
-  console.log(cardIndex)
-  card.style.width = '100%'
-  card.src = '/game_images/card_back.JPEG'
-  card.id = cardIndex
-  cell.appendChild(card)
-}
-
-// const flipCard = (cardIndex) => {
-//   console.log(cardIndex)
-//   let card = document.createElement('img')
-//   card.style.width = '100%'
-//   if (gameCard[cardIndex].flipped == false) {
-//     gameCard[cardIndex].flipped = true
-//     card.src = gameCard[cardIndex].img
-//     cell.appendChild(card)
-//     console.log('if')
-//   } else {
-//     gameCard[cardIndex].flipped = false
-//     card.src = '/game_images/card_back.JPEG'
-//     cell.appendChild(card)
-//     console.log('else')
-//   }
-// }
 
 // console.log(gameCard[0].img)
 // flipCard(0)
