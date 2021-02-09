@@ -24,32 +24,40 @@ let gameCard = [
     flipped: false
   }
 ]
-
-let card = document.createElement('img')
+let counter = 0
 
 /*********/
 /*Functions*/
 const handleClick = (event) => {
   const cardIndex = event.target.id
-  console.log(event.target)
-  flipCard(cardIndex)
+
+  // counter++
+  let cell = document.getElementById(cardIndex)
+  card = document.createElement('img')
+
+  flipCard(cardIndex, cell, card)
 }
 
-const flipCard = (cardIndex) => {
-  let cell = document.getElementById(cardIndex)
-  // card.className = 'cell'
+const flipCard = (cardIndex, cell, card) => {
   card.style.width = '100%'
   card.style.height = '100%'
   card.style.borderRadius = '4px'
   card.id = cardIndex
-  if (gameCard[cardIndex].flipped == false) {
+  if (gameCard[cardIndex].flipped === false) {
     gameCard[cardIndex].flipped = true
+        if (cell.appendChild(card) === true) {
+          cell.removeChild(cell.lastElementChild)
+        }
     card.src = gameCard[cardIndex].img
     cell.appendChild(card)
-  } else {
+  } else if (gameCard[cardIndex].flipped === true) {
+    cell.removeChild(cell.lastElementChild)
     gameCard[cardIndex].flipped = false
     card.src = '/game_images/card_back.JPEG'
     cell.appendChild(card)
+  } 
+  else if (gameCard[cardIndex].flipped = false) {
+    cell.removeChild(cell.lastElementChild)
   }
 }
 
