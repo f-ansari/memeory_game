@@ -41,7 +41,7 @@ const handleClick = (event) => {
 const flipCard = (cardIndex, cell, card) => {
   card.style.width = '100%'
   card.style.height = '100%'
-  card.style.borderRadius = '4px'
+  card.style.borderRadius = '10px'
   card.id = cardIndex
   if (gameCard[cardIndex].flipped === false) {
     gameCard[cardIndex].flipped = true
