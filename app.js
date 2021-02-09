@@ -13,7 +13,6 @@ let gameCard = [
 const cell = document.querySelector('.cell')
 let card = document.createElement('img')
 
-
 /*********/
 /*Functions*/
 const handleClick = (event) => {
@@ -23,8 +22,10 @@ const handleClick = (event) => {
 }
 
 const flipCard = (cardIndex) => {
+  // card.className = 'cell'
   card.style.width = '100%'
   card.style.height = '100%'
+  card.style.borderRadius = '4px'
   card.id = cardIndex
   if (gameCard[cardIndex].flipped == false) {
     gameCard[cardIndex].flipped = true
