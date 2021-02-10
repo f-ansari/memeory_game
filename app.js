@@ -28,7 +28,6 @@ let gameCard = [
 /*Functions*/
 const handleClick = (event) => {
   const cardIndex = event.target.id
-  console.log(cardIndex)
   cell = document.getElementById(cardIndex)
   card = document.createElement('img')
 
@@ -36,12 +35,13 @@ const handleClick = (event) => {
   card.id = cardIndex
   card.style.width = '100%'
   card.style.height = '100%'
-  card.style.borderRadius = '10px'
+  card.style.borderRadius = '10px solid white'
 
   flipCard(cardIndex, cell, card)
-  // checkMatch(cardIndex, cell, card)
 }
+
 cardsPicked = []
+
 const flipCard = (cardIndex, cell, card) => {
   if (gameCard[cardIndex].flipped === false) {
     gameCard[cardIndex].flipped = true
@@ -50,34 +50,34 @@ const flipCard = (cardIndex, cell, card) => {
     }
     card.src = gameCard[cardIndex].img
     cell.appendChild(card)
-    cardsPicked.push(gameCard[cardIndex].name)
+    cardsPicked.push(gameCard[cardIndex].img)
     if (cardsPicked.length == 2) {
-      console.log(cardsPicked)
-      // checkMatch()
-      setTimeout(checkMatch(), 500000)
+      setTimeout(() => {
+        checkMatch()
+      }, 900)
     }
   } else if (gameCard[cardIndex].flipped === true) {
-    console.log(cell.lastElementChild)
+    cardsPicked.pop()
     cell.removeChild(cell.lastElementChild)
     gameCard[cardIndex].flipped = false
     card.src = '/game_images/card_back.JPEG'
     cell.appendChild(card)
   }
 }
+
 cardsWonArr = []
+
 const checkMatch = () => {
   let cardOnePicked = cardsPicked[0]
   let cardTwoPicked = cardsPicked[1]
 
   if (cardOnePicked === cardTwoPicked) {
-    alert('its a match!')
+    console.log('its a match!')
     cardsWonArr.push(cardsPicked)
-    // while(cardsPicked > 0){
-    //   cardsPicked.pop()
-    // }
     cardsPicked = []
+    // card.style = 'white'
   } else {
-    alert('try again')
+    console.log('try again')
   }
 }
 
