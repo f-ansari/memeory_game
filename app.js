@@ -81,22 +81,22 @@ const flipCard = (cardIndex) => {
   card.style.width = '100%'
   card.style.height = '100%'
   card.style.borderRadius = '10px solid white'
-  // cell.removeEventListener('click', handleClick)
+  cell.removeEventListener('click', handleClick)
 
   card.src = gameCard[cardIndex].img
   cell.appendChild(card)
   cardsPicked.push(gameCard[cardIndex].img)
   cardIndexes.push(cardIndex)
   if (cardsPicked.length === 2) {
-    checkMatch()
+    checkMatch(cell)
   }
 }
 cardsWonArr = []
 
-const checkMatch = () => {
+const checkMatch = (cell) => {
   let card1 = document.getElementById(cardIndexes[0])
   let card2 = document.getElementById(cardIndexes[1])
-
+  
   if (cardsPicked[0] === cardsPicked[1]) {
     console.log('its a match!')
     cardsWonArr.push(cardsPicked)
@@ -114,6 +114,8 @@ const checkMatch = () => {
     setTimeout(() => {
       card1.removeChild(card1.childNodes[0])
       card2.removeChild(card2.childNodes[0])
+      card1.addEventListener('click', handleClick)
+      card2.addEventListener('click', handleClick)
     }, 1000)
   }
   cardIndexes = []
