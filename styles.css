@@ -41,16 +41,16 @@ GAMEBORD
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   /* grid-template-rows: repeat(6, 1fr);  */
-  margin: 10vh 9vw 0 0;
-  height: 90vh;
-  width: 90vw;
+  margin: 9h 9vw 0 9vw;
+  height: 50%;
+  width: 50%;
   justify-content: center;
   align-items: center;
 }
 
 .cell {
-  height: 300px;
-  width: 300px;
+  height: 100px;
+  width: 100px;
   background-color: #a0446c;
   border: 2px solid white;
   border-radius: 10px;

@@ -78,45 +78,57 @@ const flipCard = (cardIndex) => {
   card = document.createElement('img')
   /*Style of Card */
   card.id = cardIndex
+  card.className = 'animate__animated animate__flipInY'
   card.style.width = '100%'
   card.style.height = '100%'
-  card.style.borderRadius = '10px solid white'
+  card.style.backgroundColor = 'white'
+  card.style.border = '2px'
+  card.style.borderRadius = '10px'
   cell.removeEventListener('click', handleClick)
+
+  cell.style.backgroundColor = 'black'
 
   card.src = gameCard[cardIndex].img
   cell.appendChild(card)
   cardsPicked.push(gameCard[cardIndex].img)
   cardIndexes.push(cardIndex)
   if (cardsPicked.length === 2) {
-    checkMatch(cell)
+    checkMatch(card)
   }
 }
 cardsWonArr = []
 
-const checkMatch = (cell) => {
+const checkMatch = (card) => {
   let card1 = document.getElementById(cardIndexes[0])
   let card2 = document.getElementById(cardIndexes[1])
-  
+
   if (cardsPicked[0] === cardsPicked[1]) {
     console.log('its a match!')
     cardsWonArr.push(cardsPicked)
     cardsPicked = []
+    card1.style.borderColor= 'green'
+    card2.style.borderColor = 'green'
     setTimeout(() => {
       card1.style.opacity = '0'
       card2.style.opacity = '0'
-      // // card2.style.opacity = '0'
       card1.removeEventListener('click', handleClick)
       card2.removeEventListener('click', handleClick)
-    }, 1000)
+    }, 1500)
   } else {
     console.log('try again')
     cardsPicked = []
+    card1.style.borderColor= 'red'
+    card2.style.borderColor = 'red'
     setTimeout(() => {
-      card1.removeChild(card1.childNodes[0])
-      card2.removeChild(card2.childNodes[0])
       card1.addEventListener('click', handleClick)
       card2.addEventListener('click', handleClick)
-    }, 1000)
+      card1.removeChild(card1.childNodes[0])
+      card2.removeChild(card2.childNodes[0])
+      card1.style.backgroundColor = '#a0446c'
+      card2.style.backgroundColor = '#a0446c'
+      card1.style.borderColor= 'white'
+      card2.style.borderColor = 'white'
+    }, 1600)
   }
   cardIndexes = []
 }
