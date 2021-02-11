@@ -1,7 +1,8 @@
 body {
   width: 100vw;
   height: 100vh;
-  color: black;
+  color: white;
+  background-color: black;
   text-align: center;
   align-content: center;
   font-family: sans-serif;
@@ -37,13 +38,14 @@ GAMEBORD
 } */
 
 .game-board {
-  display: inline-grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr); 
-  margin: 0 9vw 0 0;
-  height: 500px;
-  width: 500px;
-  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: repeat(6, 1fr);  */
+  margin: 10vh 9vw 0 0;
+  height: 90vh;
+  width: 90vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .cell {
