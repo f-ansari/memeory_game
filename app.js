@@ -35,6 +35,7 @@ const handleClick = (event) => {
 
 let cardsPicked = []
 let cardIndexes = []
+
 const flipCard = (cardIndex) => {
   console.log('flip card')
   cell = document.getElementById(cardIndex)
@@ -59,9 +60,11 @@ const flipCard = (cardIndex) => {
     }
   } else if (gameCard[cardIndex].flipped === true) {
     cardsPicked.pop()
+    cardIndexes.pop()
     cell.removeChild(cell.lastElementChild)
     gameCard[cardIndex].flipped = false
   }
+  
 }
 
 cardsWonArr = []
@@ -70,7 +73,7 @@ const checkMatch = () => {
   console.log('check match')
   let card1 = document.getElementById(cardIndexes[0])
   let card2 = document.getElementById(cardIndexes[1])
-  
+
   if (cardsPicked[0] === cardsPicked[1]) {
     console.log('its a match!')
     cardsWonArr.push(cardsPicked)
