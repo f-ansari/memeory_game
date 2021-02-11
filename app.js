@@ -37,7 +37,43 @@ let gameCard = [
   },
   {
     name: 'code ghost',
-    img: 'game_images/9.jpg'
+    img: 'game_images/9.PNG'
+  },
+  {
+    name: 'Call Me Hand',
+    img: 'game_images/10.PNG'
+  },
+  {
+    name: 'Victory Hand',
+    img: 'game_images/11.PNG'
+  },
+  {
+    name: 'Technologist',
+    img: 'game_images/12.PNG'
+  },
+  {
+    name: 'Ninja',
+    img: 'game_images/13.PNG'
+  },
+  {
+    name: 'Wizard',
+    img: 'game_images/14.PNG'
+  },
+  {
+    name: 'Boy bow',
+    img: 'game_images/15.PNG'
+  },
+  {
+    name: 'Dancing Lady',
+    img: 'game_images/16.PNG'
+  },
+  {
+    name: 'Alien',
+    img: 'game_images/17.PNG'
+  },
+  {
+    name: 'Mask Face',
+    img: 'game_images/18.PNG'
   }
 ]
 /*********/
@@ -82,8 +118,8 @@ const flipCard = (cardIndex) => {
   card.style.width = '100%'
   card.style.height = '100%'
   card.style.backgroundColor = 'white'
-  card.style.border = '2px'
-  card.style.borderRadius = '10px'
+  card.style.border = '10px'
+  card.style.borderRadius = '4px'
   cell.removeEventListener('click', handleClick)
 
   cell.style.backgroundColor = 'black'
@@ -124,8 +160,8 @@ const checkMatch = (card) => {
       card2.addEventListener('click', handleClick)
       card1.removeChild(card1.childNodes[0])
       card2.removeChild(card2.childNodes[0])
-      card1.style.backgroundColor = '#a0446c'
-      card2.style.backgroundColor = '#a0446c'
+      card1.style.backgroundColor = '#1aaca5'
+      card2.style.backgroundColor = '#1aaca5'
       card1.style.borderColor= 'white'
       card2.style.borderColor = 'white'
     }, 1600)
