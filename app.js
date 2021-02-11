@@ -27,7 +27,16 @@ let gameCard = [
 /*********/
 /*Functions*/
 const handleClick = (event) => {
+  console.log('handle click')
   const cardIndex = event.target.id
+
+  flipCard(cardIndex)
+}
+
+let cardsPicked = []
+let cardIndexes = []
+const flipCard = (cardIndex) => {
+  console.log('flip card')
   cell = document.getElementById(cardIndex)
   card = document.createElement('img')
 
@@ -37,21 +46,13 @@ const handleClick = (event) => {
   card.style.height = '100%'
   card.style.borderRadius = '10px solid white'
 
-  flipCard(cardIndex, cell, card)
-}
-
-cardsPicked = []
-
-const flipCard = (cardIndex, cell, card) => {
   if (gameCard[cardIndex].flipped === false) {
     gameCard[cardIndex].flipped = true
-    if (cell.lastElementChild) {
-      cell.removeChild(cell.lastElementChild)
-    }
     card.src = gameCard[cardIndex].img
     cell.appendChild(card)
     cardsPicked.push(gameCard[cardIndex].img)
-    if (cardsPicked.length == 2) {
+    cardIndexes.push(cardIndex)
+    if (cardsPicked.length === 2) {
       setTimeout(() => {
         checkMatch()
       }, 900)
@@ -60,25 +61,33 @@ const flipCard = (cardIndex, cell, card) => {
     cardsPicked.pop()
     cell.removeChild(cell.lastElementChild)
     gameCard[cardIndex].flipped = false
-    card.src = '/game_images/card_back.JPEG'
-    cell.appendChild(card)
   }
 }
 
 cardsWonArr = []
 
 const checkMatch = () => {
-  let cardOnePicked = cardsPicked[0]
-  let cardTwoPicked = cardsPicked[1]
-
-  if (cardOnePicked === cardTwoPicked) {
+  console.log('check match')
+  let card1 = document.getElementById(cardIndexes[0])
+  let card2 = document.getElementById(cardIndexes[1])
+  
+  if (cardsPicked[0] === cardsPicked[1]) {
     console.log('its a match!')
     cardsWonArr.push(cardsPicked)
     cardsPicked = []
-    // card.style = 'white'
+    // card1.style.opacity = '1000'
+    // card2.style.opacity = '0'
+    card1.removeEventListener('click', handleClick)
+    card2.removeEventListener('click', handleClick)
   } else {
     console.log('try again')
+    cardsPicked = []
+    card1.removeChild(card1.childNodes[0])
+    card2.removeChild(card2.childNodes[0])
+    gameCard[cardIndexes[0]].flipped = false
+    gameCard[cardIndexes[1]].flipped = false
   }
+  cardIndexes = []
 }
 
 /*********/
