@@ -1,6 +1,6 @@
 # Memory Game 
 
-### Date: Febuary 07, 2021
+### Date: Febuary 12, 2021
 
 #### Author: Faryal Ansari
 
@@ -11,13 +11,13 @@
 
 #### ***Description***
 
-The Memory Game is a simple game, where the user chooses two cards from an 8 x 8 grid to see if they match. A match could be same image, number, or color. If the user chooses two cards that do not match, the card will flip back down to their original places for the user to pick agian. If they do match, the card will be removed from the board game, so the the user may complete it. 
+The Memory Game is a simple game, where the user chooses two cards from an 6 x 6 grid to see if they match. A match could be same image, number, or color. If the user chooses two cards that do not match, the card will flip back down to their original places for the user to pick agian. If they do match, the card will be removed from the board game, so the the user may complete it. 
 
 #### Functions of the game: 
-  * start the game 
-  * set the gameboard in a randomized order 
-  * have a reset button to restart the game 
-  * display a "how to play" card 
+  * Randomize the card before playing
+  * Match cards and remove them from board 
+  * Flips cards back when not match 
+  * Keeps reack how many Matches and Attempts were made
 
 
 ### ***Technologies***
@@ -36,22 +36,27 @@ To get started, click [click here](https://trello.com/invite/b/TWfgboGF/cf4c0a31
 
 ### ***Screenshots***
 
+This was the original plan.
 
+![Game sketch](game_sketch.png)
 
-![Cute cat](game_sketch.png)
+***
 
-![Cute cat](https://i.pinimg.com/736x/33/32/6d/33326dcddbf15c56d631e374b62338dc.jpg)
+Final Product 
+
+![Homepage Final Product](homepage.png)
+![Homepage Final Product](gamepage.png)
 
 ***
 
 ### ***Future Updates***
 
-- [ ] Make a functioning game
-- [ ] Make other 
+- [x] Change border color when matched
+- [x] Add Match and Attempts made counter 
+- [ ] Add a celebration sound when all matches are made
+- [ ] Make user choose board size
+- [ ] Add sounds to when user clicks board
 
-### ***Credit***
+### ***Credits***
 
-* memes from: [google](https://google.com)
-
-* [Markdown Cheasheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-* [Markdown guide](https://ia.net/writer/support/general/markdown-guide)
+* N/A
