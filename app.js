@@ -1,6 +1,5 @@
 /*********/
 /*Global Variables*/
-let isGameActive = true
 const gameBoard = document.querySelector('.game-board')
 let gameCard = [
   {

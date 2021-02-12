@@ -28,6 +28,10 @@ body {
 h3{
   font-size: 250%;
 }
+h4 {
+  font-family: 'Inconsolata', monospace;
+  font-size: 150%;
+}
 
 .nav {
   display: inline-flex;
@@ -91,10 +95,4 @@ GAMEBORD
   cursor: pointer;
 
 }
-
-/* 
-<div class="matchCard">
-<h1>Matches Made</h1>
-<div id="match-counter"></div>
-</div> */
 
