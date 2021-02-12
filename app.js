@@ -81,11 +81,11 @@ let cardIndexes = []
 let cardsWonArr = []
 let cardsAttempts = []
 let matchCounter = document.getElementById('match-counter')
-let attemptCounter =  document.getElementById('attempts-counter')
+let attemptCounter = document.getElementById('attempts-counter')
 let restartButton = document.getElementById('restart')
 const wonMessage = document.createElement('div')
 wonMessage.id = 'you-won'
-wonMessage.innerHTML = "YOU WON!</br>Press restart button</br>to play agian "
+wonMessage.innerHTML = 'YOU WON!</br>Press restart button</br>to play agian '
 wonMessage.style.opacity = '100'
 
 /*********/
@@ -101,6 +101,7 @@ const createBoard = () => {
     gameBoard.appendChild(div)
   })
 }
+
 const shuffle = (arr) => {
   let shuffleArr = arr
   let currentIndex = arr.length
@@ -160,8 +161,6 @@ const checkMatch = () => {
       card2.removeEventListener('click', handleClick)
     }, 1500)
     matchCounter.innerText = cardsWonArr.length
-    if(cardsWonArr.length === 18){
-    }
   } else {
     console.log('try again')
     cardsAttempts.push(cardsPicked)
@@ -183,11 +182,8 @@ const checkMatch = () => {
   cardIndexes = []
 }
 
-
-
-
 const restartGame = () => {
-  location.reload();
+  location.reload()
 }
 
 /*********/
@@ -207,3 +203,6 @@ restartButton.addEventListener('click', restartGame)
 // wonMessage.id = 'you-won'
 // wonMessage.innerHTML = "YOU WON!</br>Press restart button</br>to play agian "
 // wonMessage.style.opacity = '100'
+
+// if(cardsWonArr.length === 18){
+// }

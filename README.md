@@ -5,7 +5,8 @@
 #### Author: Faryal Ansari
 
 [GitHub](https://github.com/f-ansari) | 
-[LinkedIn](https://www.linkedin.com/in/faryal-a-43505b154/)
+[LinkedIn](https://www.linkedin.com/in/faryal-a-43505b154/) |
+[GameLink](http://splendid-apparatus.surge.sh/game.html)
 
 ***
 
