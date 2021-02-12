@@ -96,3 +96,19 @@ GAMEBORD
 
 }
 
+/* Additional Features to work on */
+/* #you-won {
+  display: grid;
+  background-color: #1aaca5;
+  position: absolute;
+  height: 20%;
+  width: 30%;
+  top: 35%;
+  margin: 0 10% 0 34.5%;
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  font-size: 250%;
+  padding-top: 5% ;
+  opacity: 100%;
+} */
+

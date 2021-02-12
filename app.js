@@ -83,6 +83,10 @@ let cardsAttempts = []
 let matchCounter = document.getElementById('match-counter')
 let attemptCounter =  document.getElementById('attempts-counter')
 let restartButton = document.getElementById('restart')
+const wonMessage = document.createElement('div')
+wonMessage.id = 'you-won'
+wonMessage.innerHTML = "YOU WON!</br>Press restart button</br>to play agian "
+wonMessage.style.opacity = '100'
 
 /*********/
 /*Functions*/
@@ -156,6 +160,8 @@ const checkMatch = () => {
       card2.removeEventListener('click', handleClick)
     }, 1500)
     matchCounter.innerText = cardsWonArr.length
+    if(cardsWonArr.length === 18){
+    }
   } else {
     console.log('try again')
     cardsAttempts.push(cardsPicked)
@@ -178,6 +184,8 @@ const checkMatch = () => {
 }
 
 
+
+
 const restartGame = () => {
   location.reload();
 }
@@ -192,3 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 restartButton.addEventListener('click', restartGame)
+
+/*********/
+/*Additional Features to work on*/
+// const wonMessage = document.createElement('div')
+// wonMessage.id = 'you-won'
+// wonMessage.innerHTML = "YOU WON!</br>Press restart button</br>to play agian "
+// wonMessage.style.opacity = '100'
