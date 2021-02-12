@@ -30,7 +30,7 @@ The Memory Game is a simple game, where the user chooses two cards from an 6 x 6
 
 ### ***Getting Started***
 
-To get started, click [click here](https://trello.com/invite/b/TWfgboGF/cf4c0a319a6e51959ec4266be64018cc/memory-game) and visit my trello board to follow the development of this game.
+To get started, click [click here](https://trello.com/b/TWfgboGF/memory-game) and visit my trello board to follow the development of this game.
 
 ***
 
