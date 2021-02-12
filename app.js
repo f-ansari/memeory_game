@@ -37,7 +37,7 @@ let gameCard = [
   },
   {
     name: 'code ghost',
-    img: 'game_images/9.PNG'
+    img: 'game_images/9.jpg'
   },
   {
     name: 'Call Me Hand',
@@ -76,6 +76,15 @@ let gameCard = [
     img: 'game_images/18.PNG'
   }
 ]
+
+let cardsPicked = []
+let cardIndexes = []
+let cardsWonArr = []
+let cardsAttempts = []
+let matchCounter = document.getElementById('match-counter')
+let attemptCounter =  document.getElementById('attempts-counter')
+let restartButton = document.getElementById('restart')
+
 /*********/
 /*Functions*/
 const createBoard = () => {
@@ -102,16 +111,16 @@ const shuffle = (arr) => {
   }
   return shuffleArr
 }
+
 const handleClick = (event) => {
   const cardIndex = event.target.id
   flipCard(cardIndex)
 }
 
-let cardsPicked = []
-let cardIndexes = []
 const flipCard = (cardIndex) => {
   cell = document.getElementById(cardIndex)
   card = document.createElement('img')
+
   /*Style of Card */
   card.id = cardIndex
   card.className = 'animate__animated animate__flipInY'
@@ -122,19 +131,16 @@ const flipCard = (cardIndex) => {
   card.style.borderRadius = '4px'
   cell.removeEventListener('click', handleClick)
 
-  cell.style.backgroundColor = 'black'
-
   card.src = gameCard[cardIndex].img
   cell.appendChild(card)
   cardsPicked.push(gameCard[cardIndex].img)
   cardIndexes.push(cardIndex)
   if (cardsPicked.length === 2) {
-    checkMatch(card)
+    checkMatch()
   }
 }
-cardsWonArr = []
 
-const checkMatch = (card) => {
+const checkMatch = () => {
   let card1 = document.getElementById(cardIndexes[0])
   let card2 = document.getElementById(cardIndexes[1])
 
@@ -142,7 +148,7 @@ const checkMatch = (card) => {
     console.log('its a match!')
     cardsWonArr.push(cardsPicked)
     cardsPicked = []
-    card1.style.borderColor= 'green'
+    card1.style.borderColor = 'green'
     card2.style.borderColor = 'green'
     setTimeout(() => {
       card1.style.opacity = '0'
@@ -150,10 +156,12 @@ const checkMatch = (card) => {
       card1.removeEventListener('click', handleClick)
       card2.removeEventListener('click', handleClick)
     }, 1500)
+    matchCounter.innerText = cardsWonArr.length
   } else {
     console.log('try again')
+    cardsAttempts.push(cardsPicked)
     cardsPicked = []
-    card1.style.borderColor= 'red'
+    card1.style.borderColor = 'red'
     card2.style.borderColor = 'red'
     setTimeout(() => {
       card1.addEventListener('click', handleClick)
@@ -162,12 +170,19 @@ const checkMatch = (card) => {
       card2.removeChild(card2.childNodes[0])
       card1.style.backgroundColor = '#1aaca5'
       card2.style.backgroundColor = '#1aaca5'
-      card1.style.borderColor= 'white'
+      card1.style.borderColor = 'white'
       card2.style.borderColor = 'white'
     }, 1600)
+    attemptCounter.innerText = cardsAttempts.length
   }
   cardIndexes = []
 }
+
+
+const restartGame = () => {
+  location.reload();
+}
+
 /*********/
 /*Event Listeners*/
 document.addEventListener('DOMContentLoaded', () => {
@@ -176,3 +191,5 @@ document.addEventListener('DOMContentLoaded', () => {
     cell.addEventListener('click', handleClick)
   })
 })
+
+restartButton.addEventListener('click', restartGame)
